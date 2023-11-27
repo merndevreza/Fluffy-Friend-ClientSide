@@ -103,6 +103,9 @@ const Header = () => {
             <li>
               <NavLink to="/login">Login</NavLink>
             </li>
+            <li>
+              <NavLink to="/register">Register</NavLink>
+            </li>
           </ul>
         </nav>
         <div className="order-last flex items-center gap-2">

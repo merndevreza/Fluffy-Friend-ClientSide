@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="bg-theme-black">
       <div className=" footer footer-center p-10 bg-[#03112c6c] text-[#fff]">
         <aside>
-          <img className="w-[160px] lg:w-[200px] xl:w-auto" src={footerLogo} alt="" />
+          <img className="w-[160px] lg:w-[200px]" src={footerLogo} alt="" />
           <div>
             <h2 className="text-3xl md:text-4xl mb-2 text-theme-yellow font-semibold uppercase">
               Fluffy Friend
