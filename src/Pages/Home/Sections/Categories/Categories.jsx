@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import SectionTitle from "../../../../Components/SectionTitle"; // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import CategoryCard from "./CategoryCard";
+import SectionTitle from "../../../../Components/SectionTitle"; 
 
-// Import Swiper styles
+//swiper js
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-// import required modules
-import { FreeMode, Pagination } from "swiper/modules";
-import CategoryCard from "./CategoryCard";
+
 
 const Categories = () => {
   const [slidesPerView, setSlidesPerView] = useState(0);
@@ -37,7 +37,8 @@ const Categories = () => {
   };
  
   return (
-    <div className="my-28 container mx-auto">
+   <div className="bg-theme-dark-top">
+     <div className="py-28 container mx-auto">
       <SectionTitle
         title={"Categories"}
         subTitle={"Meet Our Adoptable Companions"}
@@ -60,6 +61,7 @@ const Categories = () => {
         ))}
       </Swiper>
     </div>
+   </div>
   );
 };
 

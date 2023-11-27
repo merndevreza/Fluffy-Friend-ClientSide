@@ -17,7 +17,10 @@ export default {
      "theme-light":"#f4f4f4",
      "white":"#fff"
    },
-   extend: {},
+   extend: {
+    backgroundImage: {
+    'cta-bg': "url('./src/assets/images/cta-bg.jpg')", 
+  }},
  },
   plugins: [require("daisyui")],
 }
