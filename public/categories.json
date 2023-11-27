@@ -1,0 +1,28 @@
+[
+   {"id": 1,
+     "name": "Cuddly Cats",
+     "info": "Playful kittens to wise seniors, our feline friends are ready to bring joy and warmth to your household.",
+     "image": "https://i.ibb.co/ZVjrSFr/slide-2.png"
+   },
+   {"id": 2,
+     "name": "Doggie Delights",
+     "info": "Discover the charm of our canine companions, ranging from energetic pups to gentle and loyal senior dogs.",
+     "image": "https://i.ibb.co/ZVjrSFr/slide-2.png"
+   },
+   {"id": 3,
+     "name": "Small and Furry Friends",
+     "info": "For those who adore the smaller creatures, meet our cuddly rabbits, hamsters, and other pint-sized pals seeking a loving home.",
+     "image": "https://i.ibb.co/ZVjrSFr/slide-2.png"
+   },
+   {"id": 4,
+     "name": "Feathered Friends",
+     "info": "Embrace the enchantment of our feathered companions, perfect for those looking to add a touch of avian charm to their lives.",
+     "image": "https://i.ibb.co/ZVjrSFr/slide-2.png"
+   },
+   {"id": 5,
+     "name": "Reptiles and Amphibians",
+     "info": "For the enthusiasts of the exotic, explore our scaly and amphibious friends, each with its own unique personality.",
+     "image": "https://i.ibb.co/ZVjrSFr/slide-2.png"
+   }
+ ]
+ 

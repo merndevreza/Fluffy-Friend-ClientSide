@@ -1,4 +1,5 @@
 import AboutUs from "./Sections/AboutUs/AboutUs";
+import Categories from "./Sections/Categories/Categories";
 import Hero from "./Sections/Hero/Hero";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
         <Hero></Hero>
       </div>
       <AboutUs></AboutUs>
+      <Categories></Categories>
     </div>
   );
 };
