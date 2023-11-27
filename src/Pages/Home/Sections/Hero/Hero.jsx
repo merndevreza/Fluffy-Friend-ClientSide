@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { useEffect, useState } from "react";
+import Button from "../../../../Components/Button";
 
 const Hero = () => {
   const [slides, setSlides] = useState([]);
@@ -33,9 +34,7 @@ const Hero = () => {
                   {slide.title}
                 </h2>
                 <p className="text-xl lg:text-3xl text-white mb-5 slider-sub-title">{slide.subtitle}</p>
-                <button className="btn rounded-full bg-theme-yellow hover:bg-theme-black hover:text-white  text-theme-dark text-xl slider-button">
-                  Adopt Now
-                </button>
+                <Button btnName={"Adopt Now"}></Button>
               </div>
               <div className="relative">
                <div className="absolute md:top-12 md:left-4 bg-theme-yellow rounded-full w-20 h-20 md:w-24 md:h-24 flex justify-center items-center">

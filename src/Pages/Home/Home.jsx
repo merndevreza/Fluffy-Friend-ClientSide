@@ -2,6 +2,7 @@ import AboutUs from "./Sections/AboutUs/AboutUs";
 import CallToAction from "./Sections/CallToAction/CallToAction";
 import Categories from "./Sections/Categories/Categories";
 import Hero from "./Sections/Hero/Hero";
+import Reviews from "./Sections/Reviews/Reviews";
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
       <AboutUs></AboutUs>
       <Categories></Categories>
       <CallToAction></CallToAction>
-      <Categories></Categories>
+      <Reviews></Reviews>
     </div>
   );
 };

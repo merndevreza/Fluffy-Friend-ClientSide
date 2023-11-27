@@ -1,6 +1,7 @@
 import aboutImg from "../../../../assets/images/about.png";
 import aboutBadge from "../../../../assets/images/about-badge.png";
 import { IoMdPaw } from "react-icons/io";
+import Button from "../../../../Components/Button";
 
 const AboutUs = () => {
   return (
@@ -62,9 +63,7 @@ const AboutUs = () => {
               welfare of animals.
             </li>
           </ul>
-          <button className="btn rounded-full   bg-theme-yellow hover:bg-theme-black hover:text-white  text-theme-dark text-xl slider-button">
-            Discover Us
-          </button>
+          <Button btnName={"Discover Us"}></Button>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import { IoIosMoon } from "react-icons/io";
 import { FiSun } from "react-icons/fi";
 
 import logo from "../../../assets/images/logo.png";
+import Button from "../../../Components/Button";
 const Header = () => {
    const [scroll, setScroll] = useState(false);
    const [isDropdownOpen,setIsDropdownOpen]=useState(false)
@@ -123,20 +124,13 @@ const Header = () => {
                isDropdownOpen &&
                <div className="absolute right-0 text-center px-4 py-6 bg-[#020c25]">
                <Link className="text-lg font-medium text-white mb-3 inline-block"  to='dashboard'>Dashboard</Link>
-               <button
-                 onClick={handleLogout}
-                 className="btn bg-theme-golden hover:bg-theme-hover-golden  rounded-full border-none px-10 text-xl  text-[#fff]"
-               >
-                 Logout
-               </button>
+               <Button onClick={handleLogout} btnName={"Logout"}></Button>
                </div>
               }
             </div>
           ) : (
             <Link to="/login">
-              <button className="btn bg-theme-golden hover:bg-theme-hover-golden rounded-full border-none px-10 text-xl  text-[#fff]">
-                Login
-              </button>
+              <Button btnName={"Login"}></Button>
             </Link>
           )}
         </div>
