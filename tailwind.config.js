@@ -5,8 +5,20 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
-  },
+    fontFamily: {
+      laila: ["Laila", "serif"],
+      nunito: ["Nunito", "sans-serif"],
+    },
+   colors: {
+     "theme-yellow": "#feab0c", 
+     "theme-black": "#04102e",
+     "theme-dark":"#0f172a",
+     "theme-dark-top":"#1e293b",
+     "theme-light":"#f4f4f4",
+     "white":"#fff"
+   },
+   extend: {},
+ },
   plugins: [require("daisyui")],
 }
 
