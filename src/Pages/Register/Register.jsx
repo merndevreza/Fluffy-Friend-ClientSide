@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import Button from "../../Components/Button";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import SocialLogin from "../../Components/SocialLogin";
 
 const Register = () => { 
    const {createUser}=useContext(AuthContext) 
@@ -174,6 +175,12 @@ const Register = () => {
               />
             </div>
           </form>
+          <div className="relative text-center before:w-full before:h-[2px] before:bg-theme-black dark:before:bg-white  before:absolute before:left-0 mt-20 mb-4">
+            <h2 className="text-xl dark:text-white  bg-white text-theme-black font-semibold dark:bg-theme-dark-top inline-block relative -top-3  px-4 ">
+              You can also create account with
+            </h2>
+          </div>
+          <SocialLogin></SocialLogin>
         </div>
         <div className="mt-8  dark:bg-theme-dark-top bg-white  max-w-3xl mx-auto md:px-12 px-6 py-6 md:py-14 flex flex-col md:flex-row justify-between items-center gap-4">
           <h2 className="text-2xl font-semibold dark:text-white  text-theme-black ">Already Have Account?</h2>

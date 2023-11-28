@@ -7,21 +7,26 @@ import { FiSun } from "react-icons/fi";
 
 import logo from "../../../assets/images/logo.png";
 import Button from "../../../Components/Button";
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 const Header = () => {
-   const [scroll, setScroll] = useState(false);
-   const [isDropdownOpen,setIsDropdownOpen]=useState(false)
-  const user = true;
+  const [scroll, setScroll] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const {user, logOutUser } = useContext(AuthContext);
+  const [isLoggedIn,setIsLoggedIn]=useState(false)
+
   //fix menu at top
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 300);
     });
   }, []);
-  
+
   //user-dropdown
-  const handleDropdown=()=>{
-   setIsDropdownOpen(!isDropdownOpen)
-  }
+  const handleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
   //dark light toggler
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
@@ -47,23 +52,57 @@ const Header = () => {
   const handleMobileMenu = () => {
     setIsOpen(!isOpen);
   };
+  // Check user logged in or logged out and update UI instantly
+  useEffect(()=>{
+    if (user) {
+      setIsLoggedIn(true)
+    }
+  },[user])
   //logout
-  const handleLogout = () => {};
+  const handleLogout = () => { 
+    logOutUser()
+      .then(() => {
+        Swal.fire({
+          title: "Logged Out!!",
+          text: `You successfully Logged out`,
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+        setIsLoggedIn(false)
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        Swal.fire({
+          title: "Error!",
+          text: `${errorMessage}`,
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+      });
+  }; 
   return (
-    <div className={scroll?"fixed z-30 top-0 w-full bg-[#04102e]":"bg-[#04102e]"}>
+    <div
+      className={
+        scroll ? "fixed z-30 top-0 w-full bg-[#04102e]" : "bg-[#04102e]"
+      }
+    >
       <header className="container mx-auto py-4 px-2 flex justify-between items-center">
         <div className="order-2 xl:order-1">
           <Link to="/">
             <div className="flex items-center gap-3">
-            <img
-              className="max-h-[70px] md:max-h-[80px] lg:max-h-[100px]"
-              src={logo}
-              alt=""
-            />
-            <div>
-               <h2 className="text-xl md:text-4xl mb-2 text-theme-yellow font-semibold uppercase">Fluffy Friend</h2>
-               <h3 className="hidden md:block md:text-xl font-medium text-white">Adopt Adorable Pets</h3>
-            </div>
+              <img
+                className="max-h-[70px] md:max-h-[80px] lg:max-h-[100px]"
+                src={logo}
+                alt=""
+              />
+              <div>
+                <h2 className="text-xl md:text-4xl mb-2 text-theme-yellow font-semibold uppercase">
+                  Fluffy Friend
+                </h2>
+                <h3 className="hidden md:block md:text-xl font-medium text-white">
+                  Adopt Adorable Pets
+                </h3>
+              </div>
             </div>
           </Link>
         </div>
@@ -116,21 +155,31 @@ const Header = () => {
               <IoIosMoon className="text-[#fff] text-[35px]" />
             )}
           </button>
-          {user ? (
-            <div className="relative ">
-              <img onClick={handleDropdown}
-                className="w-[50px] h-[50px] object-cover cursor-pointer "
-                src={logo}
-                alt="user photo"
-              />
-              {
-               isDropdownOpen &&
-               <div className="absolute right-0 text-center px-4 py-6 bg-[#020c25]">
-               <Link className="text-lg font-medium text-white mb-3 inline-block"  to='dashboard'>Dashboard</Link>
-               <Button onClick={handleLogout} btnName={"Logout"}></Button>
-               </div>
-              }
-            </div>
+          {isLoggedIn ? (
+            user?.photoURL && <div className="relative ">
+            <img
+              onClick={handleDropdown}
+              className="w-[50px] h-[50px] object-cover cursor-pointer rounded-full "
+              src={user.photoURL}
+              alt="user photo"
+            />
+            {isDropdownOpen && (
+              <div className="absolute z-50 right-0 text-center px-4 py-6 bg-[#020c25]">
+                <Link
+                  className="text-lg font-medium text-white mb-3 inline-block"
+                  to="dashboard"
+                >
+                  Dashboard
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="btn rounded-full  border-none bg-theme-yellow hover:bg-theme-black hover:text-white cursor-pointer text-theme-dark text-xl px-8 slider-button"
+                >
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
           ) : (
             <Link to="/login">
               <Button btnName={"Login"}></Button>
