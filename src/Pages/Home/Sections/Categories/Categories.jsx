@@ -41,7 +41,7 @@ const Categories = () => {
      <div className="py-28 container mx-auto">
       <SectionTitle
         title={"Categories"}
-        subTitle={"Meet Our Adoptable Companions"}
+        subTitle={"Meet Our Companions"}
         info={"Explore our diverse range of lovable pets waiting for their forever homes. Find the perfect companion to welcome into your heart and home."}
       ></SectionTitle>
       <Swiper

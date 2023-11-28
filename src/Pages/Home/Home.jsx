@@ -1,4 +1,5 @@
 import AboutUs from "./Sections/AboutUs/AboutUs";
+import AdoptionProcess from "./Sections/AdoptionProcess/AdoptionProcess";
 import CallToAction from "./Sections/CallToAction/CallToAction";
 import Categories from "./Sections/Categories/Categories";
 import Hero from "./Sections/Hero/Hero";
@@ -13,6 +14,7 @@ const Home = () => {
       <AboutUs></AboutUs>
       <Categories></Categories>
       <CallToAction></CallToAction>
+      <AdoptionProcess></AdoptionProcess>
       <Reviews></Reviews>
     </div>
   );
