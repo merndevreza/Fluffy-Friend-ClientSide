@@ -54,7 +54,9 @@ const Register = () => {
             displayName: name,
             photoURL: photo,
           })
-            .then()
+            .then(()=>{
+              
+            })
             .catch((error) => {
               Swal.fire({
                 title: "Error!",
