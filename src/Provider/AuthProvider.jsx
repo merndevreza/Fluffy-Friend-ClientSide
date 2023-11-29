@@ -60,11 +60,9 @@ const AuthProvider = ({ children }) => {
           "photo":user.photoURL,
           "role":"user"
         }
-        axiosSecure.post("/users",userInfo)
-        .then(res=>console.log(res.data))
-
+        axiosSecure.post("/users",userInfo) 
       } else {
-        console.log("user is signed out");
+        // console.log("user is signed out");
         setLoading(false);
       }
     });

@@ -5,7 +5,7 @@ import Button from "../../../../Components/Button";
 
 const AboutUs = () => {
   return (
-    <div className="dark:bg-theme-dark bg-[#f5eed9]   py-28 px-2">
+    <div className="dark:bg-theme-dark bg-[#f5eed9]   py-14 md:py-24 lg:py-28 px-2">
       <div className=" flex flex-col xl:flex-row justify-center gap-10 container mx-auto ">
         <div className="xl:w-full flex justify-center relative">
           <img

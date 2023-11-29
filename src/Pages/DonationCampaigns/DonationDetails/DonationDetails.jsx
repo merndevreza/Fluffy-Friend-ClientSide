@@ -1,12 +1,11 @@
-import { useContext, useState } from "react";
+import {useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import PageBanner from "../../../Components/PageBanner"; 
-import { AuthContext } from "../../../Provider/AuthProvider";
+
 
 const DonationDetails = () => {
-  const {user}=useContext(AuthContext)
   const params = useParams();
   const [donationDetails, setDonationDetails] = useState({});
   const { petName, image, maxDonationAmount, totalDonationAmount, details } =
@@ -25,7 +24,7 @@ const DonationDetails = () => {
         pageTitle={"Donate to Make a Difference"}
         pageSubtitle={petName}
       ></PageBanner>
-      <div className="bg-shape-bg bg-fixed relative py-28">
+      <div className="shape-bg bg-fixed relative py-14 md:py-24 lg:py-28">
         <div className="absolute left-0 top-0 w-full h-full bg-theme-black dark:opacity-90 opacity-0"></div>
         <div className="container mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-3 lg:gap-8">
           <div className="col-span-2 mb-6 lg:mb-0 dark:bg-theme-dark-top dark:text-white text-theme-dark bg-white px-8 pt-12 pb-20">
@@ -119,7 +118,7 @@ const DonationDetails = () => {
                 className="modal modal-bottom sm:modal-middle"
               >
                 <div className="modal-box bg-white text-theme-black text-center">
-                  <h3 className="font-bold text-2xl text-theme-yellow">Welcome {user.displayName?user.displayName:""}!</h3>
+                  <h3 className="font-bold text-2xl text-theme-yellow">Welcome!</h3>
                   <p className="py-2 text-lg font-semibold">
                   Donate to Make a Difference 
                   </p>

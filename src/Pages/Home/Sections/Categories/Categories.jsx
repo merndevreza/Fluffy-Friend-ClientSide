@@ -38,7 +38,7 @@ const Categories = () => {
   };
  
   return (
-    <div className="bg-shape-bg relative py-28">
+    <div className="shape-bg relative py-14 md:py-24 lg:py-28">
     <div className="absolute left-0 top-0 w-full h-full bg-theme-black dark:opacity-90 opacity-0"></div>
      <div className="container mx-auto relative z-10">
       <SectionTitle

@@ -8,8 +8,7 @@ import PageBanner from "../../../Components/PageBanner";
 import Swal from "sweetalert2";
 
 const PetDetails = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user);
+  const { user } = useContext(AuthContext); 
   const params = useParams();
   const [petDetails, setPetDetails] = useState({});
   const {name, age, location, details, image } = petDetails;
@@ -51,7 +50,7 @@ const PetDetails = () => {
         pageTitle={"Open Your Heart and Home: Adopt a Pet Today"}
         pageSubtitle={name}
       ></PageBanner>
-      <div className="bg-shape-bg bg-fixed relative py-5 md:py-16 lg:py-28 px-2">
+      <div className="shape-bg bg-fixed relative py-5 md:py-16 lg:py-28 px-2">
         <div className="absolute left-0 top-0 w-full h-full bg-theme-black dark:opacity-90 opacity-0"></div>
         <div className="container mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-3 lg:gap-8">
           <div className="col-span-2 mb-6 lg:mb-0 dark:bg-theme-dark-top dark:text-white text-theme-dark bg-white p-6 lg:p-12">
@@ -177,12 +176,14 @@ const PetDetails = () => {
                           type="number"
                           name="phone"
                           placeholder="Phone"
+                          required
                         />
                         <input
                           className="w-full rounded-full  pl-4 py-2 bg-[#feab0c6c] dark:placeholder:text-[#fff] placeholder:text-theme-black dark:text-white text-theme-black  border-none"
                           type="text"
                           name="address"
                           placeholder="Your Address"
+                          required
                         />
                         <input
                           className="w-full rounded-full  border-none bg-theme-yellow hover:bg-theme-black hover:text-white cursor-pointer text-theme-dark font-semibold text-lg px-8 py-1"

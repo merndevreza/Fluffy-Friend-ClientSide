@@ -21,8 +21,6 @@ export default {
    extend: {
     backgroundImage: {
     'cta-bg': "url('./src/assets/images/cta.jpg')", 
-    'page-bg': "url('./src/assets/images/aaa.jpg')", 
-    'shape-bg': "url('./src/assets/images/shape-bg.jpg')", 
   }},
  },
   plugins: [require("daisyui")],

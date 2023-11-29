@@ -10,9 +10,9 @@ const DonationCampaigns = () => {
        .then(res=>{
          setDonationCampaigns(res.data)
        })
-   }, []);
+   }, [axiosPublic]);
    return (
-      <div className="bg-shape-bg bg-fixed relative py-28">
+      <div className="shape-bg bg-fixed relative py-14 md:py-24 lg:py-28">
       <div className="absolute left-0 top-0 w-full h-full bg-theme-black dark:opacity-90 opacity-0"></div>
       <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-3 gap-12">

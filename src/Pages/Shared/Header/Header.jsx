@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { RiMenuLine } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai";
 import { IoIosMoon } from "react-icons/io";
@@ -13,9 +13,10 @@ import Swal from "sweetalert2";
 const Header = () => {
   const [scroll, setScroll] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const {user, logOutUser } = useContext(AuthContext);
-  const [isLoggedIn,setIsLoggedIn]=useState(false)
-
+  const { user, logOutUser } = useContext(AuthContext);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
   //fix menu at top
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -52,13 +53,15 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
   // Check user logged in or logged out and update UI instantly
-  useEffect(()=>{
+  useEffect(() => {
     if (user) {
-      setIsLoggedIn(true)
+      setIsLoggedIn(true);
+    }else{
+      setIsLoggedIn(false)
     }
-  },[user])
+  }, [user]);
   //logout
-  const handleLogout = () => { 
+  const handleLogout = () => {
     logOutUser()
       .then(() => {
         Swal.fire({
@@ -67,7 +70,8 @@ const Header = () => {
           icon: "success",
           confirmButtonText: "OK",
         });
-        setIsLoggedIn(false)
+        setIsLoggedIn(false);
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -78,11 +82,13 @@ const Header = () => {
           confirmButtonText: "OK",
         });
       });
-  }; 
+  };
   return (
     <div
       className={
-        scroll ? "fixed z-30 top-0 w-full dark:bg-theme-black bg-[#fbebcd] shadow-lg" : "dark:bg-theme-black bg-[#fbebcd]"
+        scroll
+          ? "fixed z-30 top-0 w-full dark:bg-theme-black bg-[#fbebcd] shadow-lg"
+          : "dark:bg-theme-black bg-[#fbebcd]"
       }
     >
       <header className="container mx-auto py-4 px-2 flex justify-between items-center">
@@ -155,30 +161,32 @@ const Header = () => {
             )}
           </button>
           {isLoggedIn ? (
-            user?.photoURL && <div className="relative ">
-            <img
-              onClick={handleDropdown}
-              className="w-[50px] h-[50px] object-cover cursor-pointer rounded-full "
-              src={user.photoURL}
-              alt="user photo"
-            />
-            {isDropdownOpen && (
-              <div className="absolute z-50 right-0 text-center px-4 py-6 bg-[#020c25]">
-                <Link
-                  className="text-lg font-medium text-white mb-3 inline-block"
-                  to="dashboard"
-                >
-                  Dashboard
-                </Link>
-                <button
-                  onClick={handleLogout}
-                  className="btn rounded-full  border-none bg-theme-yellow hover:bg-theme-black hover:text-white cursor-pointer text-theme-dark text-xl px-8 slider-button"
-                >
-                  Logout
-                </button>
+            user?.photoURL && (
+              <div className="relative ">
+                <img
+                  onClick={handleDropdown}
+                  className="w-[50px] h-[50px] object-cover cursor-pointer rounded-full "
+                  src={user.photoURL}
+                  alt="user photo"
+                />
+                {isDropdownOpen && (
+                  <div className="absolute z-50 right-0 text-center px-4 py-6 bg-[#020c25]">
+                    <Link
+                      className="text-lg font-medium text-white mb-3 inline-block"
+                      to="dashboard"
+                    >
+                      Dashboard
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className="btn rounded-full  border-none bg-theme-yellow hover:bg-theme-black hover:text-white cursor-pointer text-theme-dark text-xl px-8 slider-button"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
+            )
           ) : (
             <Link to="/login">
               <Button btnName={"Login"}></Button>

@@ -18,7 +18,9 @@ const Hero = () => {
       .then((res) => setSlides(res.data)) 
   }, [axiosPublic]);
   return (
-    <div>
+    <div className="shape-bg relative">
+      <div className="absolute left-0 top-0 w-full h-full bg-theme-black dark:opacity-90 opacity-0 z-10"></div>
+      <div className="relative z-20">
       <Swiper
         pagination={{
           type: "progressbar",
@@ -54,6 +56,7 @@ const Hero = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      </div>
     </div>
   );
 };

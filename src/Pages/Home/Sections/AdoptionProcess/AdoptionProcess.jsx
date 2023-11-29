@@ -2,7 +2,7 @@ import SectionTitle from "../../../../Components/SectionTitle";
 
 const AdoptionProcess = () => {
   return (
-    <div className="dark:bg-theme-dark-top bg-[#f5eed9] py-28">
+    <div className="dark:bg-theme-dark-top bg-[#f5eed9] py-14 md:py-24 lg:py-28">
       <div className="container mx-auto">
         <SectionTitle
           title={"How it works?"}

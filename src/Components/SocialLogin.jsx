@@ -3,10 +3,11 @@ import { FcGoogle } from "react-icons/fc";
 import { IoLogoGithub } from "react-icons/io5";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {
    const navigate = useNavigate();
+   const location = useLocation();
    const {googleLogin,githubLogin}=useContext(AuthContext)
 
    const handleGoogleLogin = () => {

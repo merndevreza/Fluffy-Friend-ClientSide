@@ -9,47 +9,61 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import DonationDetails from "../Pages/DonationCampaigns/DonationDetails/DonationDetails";
 import PetDetails from "../Pages/PetListing/PetDetails/PetDetails";
+import CategoryPage from "../Pages/CategoryPage/CategoryPage";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
-   {
-     path: "/",
-     element: <Root></Root>,
-     errorElement:<ErrorPage></ErrorPage>,
-     children:[
+  {
+    path: "/",
+    element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
       {
-         path:"/",
-         element:<Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
-         path:"/pet-listing",
-         element:<PetListing></PetListing>
+        path: "/pet-listing",
+        element: <PetListing></PetListing>,
       },
       {
-         path:"/pet/details/:id",
-         element:<PetDetails></PetDetails>
+        path: "/pet/details/:id",
+        element: (
+          <PrivateRoutes>
+            <PetDetails></PetDetails>
+          </PrivateRoutes>
+        ),
       },
       {
-         path:"/donation-campaigns",
-         element:<DonationCampaigns></DonationCampaigns>
+        path: "/pet/category/:id",
+        element: <CategoryPage></CategoryPage>,
       },
       {
-         path:"/donation/details/:id", 
-         element:<DonationDetails></DonationDetails>
+        path: "/donation-campaigns",
+        element: <DonationCampaigns></DonationCampaigns>,
       },
       {
-         path:"/login",
-         element:<Login></Login>
+        path: "/donation/details/:id",
+        element: (
+          <PrivateRoutes>
+            <DonationDetails></DonationDetails>
+          </PrivateRoutes>
+        ),
       },
       {
-         path:"/register",
-         element:<Register></Register>
+        path: "/login",
+        element: <Login></Login>,
       },
-     ]
-   },
-   {
-      path:"/dashboard",
-      element:<Dashboard></Dashboard>
-   }
- ]);
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard></Dashboard>,
+  },
+]);
 
 export default router;
