@@ -12,6 +12,7 @@ import {
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { useEffect } from "react";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const auth = getAuth(app);
 export const AuthContext = createContext();
@@ -19,6 +20,7 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
+  const axiosSecure=useAxiosSecure()
   //Register user
   const createUser = (email, password) => {
     setLoading(true);
@@ -52,6 +54,15 @@ const AuthProvider = ({ children }) => {
       if (user) {
         setUser(user);
         setLoading(false);
+        const userInfo={
+          "name":user.displayName,
+          "email":user.email,
+          "photo":user.photoURL,
+          "role":"user"
+        }
+        axiosSecure.post("/users",userInfo)
+        .then(res=>console.log(res.data))
+
       } else {
         console.log("user is signed out");
         setLoading(false);
@@ -60,7 +71,7 @@ const AuthProvider = ({ children }) => {
     return () => {
       unsubscribe();
     };
-  }, []);
+  }, [axiosSecure]);
 
   const authInfo = {
     user,
