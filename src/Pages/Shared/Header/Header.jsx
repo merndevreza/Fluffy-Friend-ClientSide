@@ -44,7 +44,6 @@ const Header = () => {
   };
   useEffect(() => {
     localStorage.setItem("theme", theme);
-    document.documentElement.classList.add("light");
   }, [theme]);
 
   //mobile Menu
@@ -83,7 +82,7 @@ const Header = () => {
   return (
     <div
       className={
-        scroll ? "fixed z-30 top-0 w-full bg-[#04102e]" : "bg-[#04102e]"
+        scroll ? "fixed z-30 top-0 w-full dark:bg-theme-black bg-[#fbebcd] shadow-lg" : "dark:bg-theme-black bg-[#fbebcd]"
       }
     >
       <header className="container mx-auto py-4 px-2 flex justify-between items-center">
@@ -99,7 +98,7 @@ const Header = () => {
                 <h2 className="text-xl md:text-4xl mb-2 text-theme-yellow font-semibold uppercase">
                   Fluffy Friend
                 </h2>
-                <h3 className="hidden md:block md:text-xl font-medium text-white">
+                <h3 className="hidden md:block md:text-xl font-medium dark:text-white text-theme-black">
                   Adopt Adorable Pets
                 </h3>
               </div>
@@ -109,15 +108,15 @@ const Header = () => {
         <nav className="order-1 xl:order-2">
           <button
             onClick={handleMobileMenu}
-            className="text-2xl border-2 p-1 text-[#fff] xl:hidden"
+            className="text-2xl border-2 p-1 text-white xl:hidden"
           >
             <RiMenuLine></RiMenuLine>
           </button>
           <ul
             className={
               isOpen
-                ? "flex flex-col gap-4  text-xl font-medium  pl-6 absolute z-30 left-0 top-0 h-screen w-1/3 bg-[#04102e] text-[#fff] "
-                : "hidden xl:flex gap-6 text-[#fff]  text-xl font-medium "
+                ? "flex flex-col gap-4  text-xl font-medium  pl-6 absolute z-30 left-0 top-0 h-screen w-1/3 bg-theme-black text-theme-black dark:text-white "
+                : "hidden xl:flex gap-6 text-theme-black dark:text-white  text-xl font-medium "
             }
           >
             <div className={isOpen ? " text-right mt-4 mr-4" : "hidden"}>
@@ -133,16 +132,16 @@ const Header = () => {
             <li className="hover:text-[#feab0c]">
               <NavLink to="/">Home</NavLink>
             </li>
-            <li>
+            <li className="hover:text-[#feab0c]">
               <NavLink to="/pet-listing">Pet Listing</NavLink>
             </li>
-            <li>
+            <li className="hover:text-[#feab0c]">
               <NavLink to="/donation-campaigns">Donation Campaigns</NavLink>
             </li>
-            <li>
+            <li className="hover:text-[#feab0c]">
               <NavLink to="/login">Login</NavLink>
             </li>
-            <li>
+            <li className="hover:text-[#feab0c]">
               <NavLink to="/register">Register</NavLink>
             </li>
           </ul>
@@ -150,9 +149,9 @@ const Header = () => {
         <div className="order-last flex items-center gap-2">
           <button className="lg:mr-5" onClick={handleDarkLight}>
             {theme === "dark" ? (
-              <FiSun className="text-[#fff] text-[35px]" />
+              <FiSun className="dark:text-white text-theme-black text-[35px]" />
             ) : (
-              <IoIosMoon className="text-[#fff] text-[35px]" />
+              <IoIosMoon className="dark:text-white text-theme-black text-[35px]" />
             )}
           </button>
           {isLoggedIn ? (

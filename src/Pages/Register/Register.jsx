@@ -88,13 +88,13 @@ const Register = () => {
           <form className="flex flex-col gap-3 text-theme-black " onSubmit={handleRegister}>
             <div className="flex relative items-center mb-3 rounded-md  ">
               <label
-                className="p-3 absolute rounded-md text-white "
+                className="p-3 absolute rounded-md dark:text-white "
                 htmlFor="name"
               >
                 <FaUser></FaUser>
               </label>
               <input
-                className="w-full rounded-full  pl-12 py-2 placeholder:text-[#fff] text-white border-none"
+                className="w-full rounded-full  pl-12 py-2 bg-[#feab0c6c] dark:placeholder:text-[#fff] placeholder:text-theme-black dark:text-white text-theme-black  border-none"
                 type="text"
                 name="name"
                 placeholder="Name*"
@@ -104,13 +104,13 @@ const Register = () => {
             </div>
             <div className="flex relative items-center mb-3 rounded-md  ">
               <label
-                className="p-3 absolute rounded-md text-white  "
+                className="p-3 absolute rounded-md dark:text-white  "
                 htmlFor="email"
               >
                 <FaEnvelope></FaEnvelope>
               </label>
               <input
-                className="w-full rounded-full  pl-12 py-2 placeholder:text-[#fff] text-white border-none"
+                className="w-full rounded-full  pl-12 py-2 bg-[#feab0c6c] dark:placeholder:text-[#fff] placeholder:text-theme-black dark:text-white text-theme-black  border-none"
                 type="email"
                 name="email"
                 placeholder="Email*"
@@ -120,13 +120,13 @@ const Register = () => {
             </div>
             <div className="flex relative items-center mb-3 rounded-md  ">
               <label
-                className="p-3 absolute rounded-md text-white  "
+                className="p-3 absolute rounded-md dark:text-white  "
                 htmlFor="photo"
               >
                 <FaCamera></FaCamera>
               </label>
               <input
-                className="w-full rounded-full  pl-12 py-2 placeholder:text-[#fff] text-white border-none"
+                className="w-full rounded-full  pl-12 py-2 bg-[#feab0c6c] dark:placeholder:text-[#fff] placeholder:text-theme-black dark:text-white text-theme-black  border-none"
                 type="url"
                 name="photo"
                 placeholder="Photo url"
@@ -135,13 +135,13 @@ const Register = () => {
             </div>
             <div className="flex relative items-center mb-3 rounded-md  ">
               <label
-                className="p-3 absolute rounded-md text-white  "
+                className="p-3 absolute rounded-md dark:text-white  "
                 htmlFor="password"
               >
                 <FaKey></FaKey>
               </label>
               <input
-                className="w-full rounded-full  pl-12 py-2 placeholder:text-[#fff] text-white border-none"
+                className="w-full rounded-full  pl-12 py-2 bg-[#feab0c6c] dark:placeholder:text-[#fff] placeholder:text-theme-black dark:text-white text-theme-black  border-none"
                 type={isShown ? "text" : "password"}
                 name="password"
                 placeholder="Create password*"
@@ -150,12 +150,12 @@ const Register = () => {
               />
               <button
                 onClick={handlePasswordShow}
-                className="absolute  text-white right-3 bottom-3"
+                className="absolute  dark:text-white right-3 bottom-3"
               >
                 {isShown ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
               </button>
             </div>
-            <div className="py-3 text-theme-black dark:text-white ">
+            <div className="py-3 text-theme-black dark:text-white">
               <input type="checkbox" id="checkTerms" name="checkTerms" />
               <label className="pl-2" htmlFor="checkTerms">
                 Please accept our 

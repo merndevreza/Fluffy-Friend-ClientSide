@@ -55,12 +55,11 @@ const SocialLogin = () => {
     };
    return (
       <div className="flex justify-center gap-3">
-         <button className="text-3xl  rounded-full w-[50px] h-[50px] flex justify-center items-center bg-theme-black hover:bg-white" onClick={handleGoogleLogin}>
+         <button className="text-3xl  rounded-full w-[50px] h-[50px] flex justify-center items-center bg-theme-yellow dark:bg-theme-black dark:hover:bg-theme-yellow hover:bg-theme-black" onClick={handleGoogleLogin}>
          <FcGoogle />
          </button>
-         <button className="text-3xl  rounded-full w-[50px] h-[50px] flex justify-center items-center bg-theme-black hover:bg-white" onClick={handleGithubLogin}>
+         <button className="text-3xl  rounded-full w-[50px] h-[50px] flex justify-center items-center dark:bg-theme-black bg-theme-yellow hover:bg-theme-black hover:text-white text-theme-black dark:text-white dark:hover:bg-theme-yellow" onClick={handleGithubLogin}>
          <IoLogoGithub />
-
          </button>
       </div>
    );

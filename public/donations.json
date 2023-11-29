@@ -1,0 +1,66 @@
+[
+   {
+     "petName": "Max the Labrador",
+     "image": "https://i.ibb.co/B6b5Z1y/c1.jpg",
+     "maxDonationAmount": 500,
+     "totalDonationAmount": 600,
+     "details": "Help Max receive the medical care he needs to ensure a healthy and happy life. Max is a loving Labrador Retriever with boundless energy, and your donation can make a significant difference in his well-being."
+   },
+   {
+     "petName": "Luna the Golden Retriever",
+     "image": "https://i.ibb.co/b6sqRkr/c2.jpg",
+     "maxDonationAmount": 600,
+     "totalDonationAmount": 800,
+     "details": "Support Luna's journey to finding a forever home. Your generous contribution will go towards providing Luna with proper nutrition, grooming, and everything she needs to thrive in a loving family."
+   },
+   {
+     "petName": "Buddy the Beagle",
+     "image": "https://i.ibb.co/yRdb0NL/c3.jpg",
+     "maxDonationAmount": 400,
+     "totalDonationAmount": 500,
+     "details": "Buddy, the playful Beagle, is looking for a family filled with laughter and joy. Your donations will help cover Buddy's adoption fees and initial veterinary expenses, ensuring a smooth transition to his new home."
+   },
+   {
+     "petName": "Whiskers the Siamese Cat",
+     "image": "https://i.ibb.co/7nbPNjJ/c4.jpg",
+     "maxDonationAmount": 300,
+     "totalDonationAmount": 350,
+     "details": "Support Whiskers on his journey to finding a cozy lap and loving family. Your donations will contribute to Whiskers' medical check-ups, vaccinations, and the comforts of his new home."
+   },
+   {
+     "petName": "Mittens the Tabby Cat",
+     "image": "https://i.ibb.co/5r5sZg9/c5.jpg",
+     "maxDonationAmount": 350,
+     "totalDonationAmount": 400,
+     "details": "Help Mittens, the playful Tabby cat, receive the care and attention he deserves. Your donations will support Mittens' journey to finding a home filled with toys, love, and cozy corners."
+   },
+   {
+     "petName": "Oreo the Holland Lop Rabbit",
+     "image": "https://i.ibb.co/yY9B6JB/d1.jpg",
+     "maxDonationAmount": 200,
+     "totalDonationAmount": 250,
+     "details": "Support Oreo's hop into a new chapter of life. Your donations will ensure Oreo has a comfortable living space, fresh greens, and the love he needs to thrive as a Holland Lop rabbit."
+   },
+   {
+     "petName": "Thumper the Flemish Giant Rabbit",
+     "image": "https://i.ibb.co/Rvtd7S9/d2.jpg",
+     "maxDonationAmount": 250,
+     "totalDonationAmount": 300,
+     "details": "Help Thumper, the gentle Flemish Giant rabbit, find a peaceful home. Your donations will contribute to Thumper's veterinary care, a spacious living environment, and the love he deserves."
+   },
+   {
+     "petName": "Cotton the Angora Rabbit",
+     "image": "https://i.ibb.co/3cCyZNd/d3.jpg",
+     "maxDonationAmount": 180,
+     "totalDonationAmount": 200,
+     "details": "Support Cotton's journey to a forever home filled with warmth and care. Your donations will provide Cotton, the fluffy Angora rabbit, with grooming sessions and a loving family to call his own."
+   },
+   {
+     "petName": "Bambi the Jack Russell Terrier",
+     "image": "https://i.ibb.co/NYWqFNv/d4.jpg",
+     "maxDonationAmount": 450,
+     "totalDonationAmount": 500,
+     "details": "Help Bambi, the lively Jack Russell Terrier, on his adventures to find a family. Your donations will contribute to Bambi's veterinary care, playtime toys, and a loving home where he can thrive."
+   }
+ ]
+ 

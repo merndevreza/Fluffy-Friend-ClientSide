@@ -1,28 +1,28 @@
 [
-   {"id": 1,
-     "name": "Cuddly Cats",
+   {
+     "name": "Cute Cats",
      "info": "Playful kittens to wise seniors, our feline friends are ready to bring joy and warmth to your household.",
-     "image": "https://i.ibb.co/ZVjrSFr/slide-2.png"
+     "image": "https://i.ibb.co/44hDJYn/cat.jpg"
    },
-   {"id": 2,
+   {
      "name": "Doggie Delights",
      "info": "Discover the charm of our canine companions, ranging from energetic pups to gentle and loyal senior dogs.",
-     "image": "https://i.ibb.co/ZVjrSFr/slide-2.png"
+     "image": "https://i.ibb.co/dQdgryH/dogs.jpg"
    },
-   {"id": 3,
-     "name": "Small and Furry Friends",
+   {
+     "name": "Rabbits",
      "info": "For those who adore the smaller creatures, meet our cuddly rabbits, hamsters, and other pint-sized pals seeking a loving home.",
-     "image": "https://i.ibb.co/ZVjrSFr/slide-2.png"
+     "image": "https://i.ibb.co/zGkMpHk/rabbits.jpg"
    },
-   {"id": 4,
-     "name": "Feathered Friends",
+   {
+     "name": "Birds",
      "info": "Embrace the enchantment of our feathered companions, perfect for those looking to add a touch of avian charm to their lives.",
-     "image": "https://i.ibb.co/ZVjrSFr/slide-2.png"
+     "image": "https://i.ibb.co/vhGGkX9/birds.jpg"
    },
-   {"id": 5,
-     "name": "Reptiles and Amphibians",
+   {
+     "name": "Aquarium fished",
      "info": "For the enthusiasts of the exotic, explore our scaly and amphibious friends, each with its own unique personality.",
-     "image": "https://i.ibb.co/ZVjrSFr/slide-2.png"
+     "image": "https://i.ibb.co/8sgXVct/fish.jpg"
    }
  ]
  

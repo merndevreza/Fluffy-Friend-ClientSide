@@ -8,18 +8,19 @@ import { FreeMode, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
+import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 
 
 const Categories = () => {
   const [slidesPerView, setSlidesPerView] = useState(0);
   const [categories, setCategories] = useState([]);
+  const axiosPublic=useAxiosPublic()
   useEffect(() => {
-    fetch("categories.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setCategories(data);
+    axiosPublic.get("/categories") 
+      .then((res) => {
+        setCategories(res.data);
       });
-  }, []);
+  }, [axiosPublic]);
   
   useEffect(() => {
     setSlidesPerView(getInitialSlidesPerView)
@@ -37,8 +38,9 @@ const Categories = () => {
   };
  
   return (
-   <div className="bg-theme-dark-top">
-     <div className="py-28 container mx-auto">
+    <div className="bg-shape-bg relative py-28">
+    <div className="absolute left-0 top-0 w-full h-full bg-theme-black dark:opacity-90 opacity-0"></div>
+     <div className="container mx-auto relative z-10">
       <SectionTitle
         title={"Categories"}
         subTitle={"Meet Our Companions"}
@@ -55,7 +57,7 @@ const Categories = () => {
         className="mySwiper"
       >
         {categories.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide key={item._id}>
             <CategoryCard item={item}></CategoryCard>
           </SwiperSlide>
         ))}

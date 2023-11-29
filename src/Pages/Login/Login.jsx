@@ -1,16 +1,16 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import {  useContext, useState } from "react";
+import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 
-import { FaEnvelope, FaEye, FaEyeSlash, FaKey } from "react-icons/fa"; 
+import { FaEnvelope, FaEye, FaEyeSlash, FaKey } from "react-icons/fa";
 import Button from "../../Components/Button";
 import { AuthContext } from "../../Provider/AuthProvider";
 import SocialLogin from "../../Components/SocialLogin";
 
 const Login = () => {
-   //TODO: 
-   const {loginUser} =useContext(AuthContext); 
-  
+  //TODO:
+  const { loginUser } = useContext(AuthContext);
+
   const [isShown, setIsShown] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -61,13 +61,13 @@ const Login = () => {
           >
             <div className="flex relative items-center mb-3 rounded-md  ">
               <label
-                className="p-3 absolute rounded-md  text-white"
+                className="p-3 absolute rounded-md dark:text-white  "
                 htmlFor="email"
               >
                 <FaEnvelope></FaEnvelope>
               </label>
               <input
-                className="w-full rounded-full  pl-12 py-2 placeholder:text-[#fff] text-white border-none"
+                className="w-full rounded-full  pl-12 py-2 bg-[#feab0c6c] dark:placeholder:text-[#fff] placeholder:text-theme-black dark:text-white text-theme-black  border-none"
                 type="email"
                 name="email"
                 placeholder="Email*"
@@ -77,13 +77,13 @@ const Login = () => {
             </div>
             <div className="flex relative items-center mb-3 rounded-md  ">
               <label
-                className="p-3 absolute rounded-md  text-white"
+                className="p-3 absolute rounded-md dark:text-white  "
                 htmlFor="password"
               >
                 <FaKey></FaKey>
               </label>
               <input
-                className="w-full rounded-full  pl-12 py-2 placeholder:text-[#fff] text-white border-none"
+                className="w-full rounded-full  pl-12 py-2 bg-[#feab0c6c] dark:placeholder:text-[#fff] placeholder:text-theme-black dark:text-white text-theme-black  border-none"
                 type={isShown ? "text" : "password"}
                 name="password"
                 placeholder="Password*"
@@ -92,20 +92,20 @@ const Login = () => {
               />
               <button
                 onClick={handlePasswordShow}
-                className="absolute text-white right-3 bottom-3"
+                className="absolute  dark:text-white right-3 bottom-3"
               >
                 {isShown ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
               </button>
             </div>
             <div className="mt-3">
-              <input 
+              <input
                 className="btn rounded-full  border-none bg-theme-yellow hover:bg-theme-black hover:text-white  text-theme-dark text-xl px-8 slider-button"
                 type="submit"
                 value="Login"
               />
             </div>
           </form>
-          
+
           <div className="relative text-center before:w-full before:h-[2px] before:bg-theme-black dark:before:bg-white  before:absolute before:left-0 mt-20 mb-4">
             <h2 className="text-xl dark:text-white  bg-white text-theme-black font-semibold dark:bg-theme-dark-top inline-block relative -top-3  px-4 ">
               You can also login with

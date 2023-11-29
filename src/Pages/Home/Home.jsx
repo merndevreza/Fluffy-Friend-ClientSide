@@ -8,7 +8,8 @@ import Reviews from "./Sections/Reviews/Reviews";
 const Home = () => {
   return (
     <div>
-      <div className="bg-theme-dark-top">
+      <div className="bg-shape-bg relative">
+        <div className="absolute left-0 top-0 w-full h-full bg-theme-black dark:opacity-90 opacity-0"></div>
         <Hero></Hero>
       </div>
       <AboutUs></AboutUs>

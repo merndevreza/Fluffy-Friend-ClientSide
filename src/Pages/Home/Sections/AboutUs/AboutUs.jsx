@@ -5,7 +5,7 @@ import Button from "../../../../Components/Button";
 
 const AboutUs = () => {
   return (
-    <div className="bg-theme-dark py-28 px-2">
+    <div className="dark:bg-theme-dark bg-[#f5eed9]   py-28 px-2">
       <div className=" flex flex-col xl:flex-row justify-center gap-10 container mx-auto ">
         <div className="xl:w-full flex justify-center relative">
           <img
@@ -21,10 +21,10 @@ const AboutUs = () => {
         </div>
         <div className="w-full text-center xl:text-left">
           <h4 className="text-3xl font-medium text-theme-yellow">About Us</h4>
-          <h2 className=" text-3xl md:text-5xl font-semibold text-white mt-4 mb-8">
+          <h2 className=" text-3xl md:text-5xl font-semibold dark:text-white text-theme-black  mt-4 mb-8">
             FluffyFriend Adoptions
           </h2>
-          <p className="text-lg md:text-xl text-theme-light mb-12">
+          <p className="text-lg md:text-xl dark:text-theme-light text-theme-dark  mb-12">
             Welcome to FluffyFriend Adoptions, where we believe in creating
             forever homes for pets and fostering meaningful connections between
             humans and their future furry companions. Our mission is to make the
@@ -33,7 +33,7 @@ const AboutUs = () => {
             homes; we are building lifelong bonds filled with love and
             companionship.
           </p>
-          <ul className="font-nunito text-lg md:text-xl  text-left space-y-2 xl:space-y-5 text text-white mb-10">
+          <ul className="font-nunito text-lg md:text-xl  text-left space-y-2 xl:space-y-5 text dark:text-theme-light text-theme-dark   mb-10">
             <li className="flex gap-2">
               <div className=" h-7 bg-theme-yellow text-theme-black rounded-full p-1">
                 <IoMdPaw />

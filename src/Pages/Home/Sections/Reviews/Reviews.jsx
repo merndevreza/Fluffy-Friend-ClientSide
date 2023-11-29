@@ -7,18 +7,20 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import ReviewCard from "./ReviewCard";
+import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 const Reviews = () => {
    const [reviews,setReviews]=useState([])
+   const axiosPublic=useAxiosPublic()
    useEffect(()=>{
-      fetch("reviews.json")
-      .then(res=>res.json())
-      .then(data=>{
-         setReviews(data)
+    axiosPublic.get("/reviews") 
+      .then(res=>{
+         setReviews(res.data)
       })
-   },[])
+   },[axiosPublic])
   return (
-    <div className="bg-theme-dark py-28">
-      <div className="container mx-auto">
+    <div className="bg-shape-bg relative py-28">
+        <div className="absolute left-0 top-0 w-full h-full bg-theme-black dark:opacity-90 opacity-0"></div>
+      <div className="container mx-auto relative z-20">
         <SectionTitle
           title={"Testimonials"}
           subTitle={"Adopter's Reviews"}
@@ -27,7 +29,7 @@ const Reviews = () => {
           }
         ></SectionTitle>
       </div>
-    <div className="bg-theme-dark px-2">
+    <div className="px-2 relative z-10">
       <div className=" flex flex-col xl:flex-row justify-center items-center gap-10 container mx-auto ">
         <div className="xl:w-full flex justify-center">
           <img

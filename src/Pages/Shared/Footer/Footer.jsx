@@ -4,9 +4,9 @@ import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
 import footerLogo from "../../../assets/images/logo.png";
 const Footer = () => {
   return (
-    <footer className="bg-theme-black">
-      <div className=" footer footer-center p-10 bg-[#03112c6c] text-[#fff]">
-        <aside>
+    <footer className="dark:bg-theme-black bg-[#7b5e27]">
+      <div className=" footer footer-center p-10 bg-[#03112c6c] text-white">
+        <aside>  
           <img className="w-[160px] lg:w-[200px]" src={footerLogo} alt="" />
           <div>
             <h2 className="text-3xl md:text-4xl mb-2 text-theme-yellow font-semibold uppercase">
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
         </nav>
       </div>
-      <p className="bg-[#010114] text-center text-[#fff] py-4">
+      <p className="bg-[#010114] text-center text-white py-4">
         Copyright &copy; 2023, All right reserved by Rezaul Karim.
       </p>
     </footer>
