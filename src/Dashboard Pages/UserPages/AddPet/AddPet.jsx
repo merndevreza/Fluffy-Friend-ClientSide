@@ -174,6 +174,7 @@ const AddPet = () => {
           <textarea
             className=" pl-4 py-2 bg-[#feab0c4c] dark:placeholder:text-[#fff] placeholder:text-theme-black dark:text-white text-theme-black  border-none"
             name="fullDescription"
+            placeholder="Full description"
             cols="30"
             rows="10"
             value={values.fullDescription}
