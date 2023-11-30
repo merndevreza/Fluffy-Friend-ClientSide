@@ -3,21 +3,46 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import PageBanner from "../../../Components/PageBanner"; 
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 
 const DonationDetails = () => {
   const params = useParams();
   const [donationDetails, setDonationDetails] = useState({});
-  const { petName, image, maxDonationAmount, totalDonationAmount, details } =
+  const { _id, petName, image, maxDonationAmount, totalDonationAmount, details } =
     donationDetails;
   const axiosPublic = useAxiosPublic();
+  const axiosSecure=useAxiosSecure()
 
   useEffect(() => {
     axiosPublic
       .get(`/donation/details/${params.id}`)
       .then((res) => setDonationDetails(res.data));
   }, [axiosPublic, params.id]);
-
+//donation
+const handleDonation=(e)=>{
+  const form = new FormData(e.currentTarget);
+    const donate = form.get("donate");
+     let total = parseInt(totalDonationAmount) + parseInt(donate);
+    const updateTotalDonation={
+      totalDonationAmount: total,
+    }
+   axiosSecure.patch(`/donate-amount/${_id}`,updateTotalDonation)
+   .then(res=>{
+    axiosPublic
+      .get(`/donation/details/${params.id}`)
+      .then((res) => setDonationDetails(res.data));
+     if (res.data.modifiedCount>0) {
+      Swal.fire({
+        title: "Congrats!!",
+        text: `You successfully Donated`,
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+     }
+   })
+}
   return (
     <div>
       <PageBanner
@@ -123,9 +148,9 @@ const DonationDetails = () => {
                   Donate to Make a Difference 
                   </p>
                   <div className="mt-7">
-                    <form className="flex justify-center" method="dialog">
+                    <form onSubmit={handleDonation} className="flex justify-center" method="dialog">
                       <div className="text-end space-y-3">
-                      <input className="w-full rounded-full  pl-4 py-2 bg-[#feab0c6c] dark:placeholder:text-[#fff] placeholder:text-theme-black dark:text-white text-theme-black  border-none" type="number" placeholder="Enter a amount" />
+                      <input className="w-full rounded-full  pl-4 py-2 bg-[#feab0c6c] dark:placeholder:text-[#fff] placeholder:text-theme-black dark:text-white text-theme-black  border-none" type="number" name="donate" placeholder="Enter a amount" />
 
                       <input className="w-full rounded-full  border-none bg-theme-yellow hover:bg-theme-black hover:text-white cursor-pointer text-theme-dark font-semibold text-lg px-8 py-1" type="submit" value="Donate" />
                       </div>

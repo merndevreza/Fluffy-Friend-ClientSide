@@ -57,6 +57,7 @@ const EditDonationCampaign = () => {
         const editDonationDoc = {
           petName: values.petName,
           maxDonationAmount: values.maxDonation,
+          totalDonationAmount:20,
           donationLastDate: values.donationLastDate,
           image: imageUrl,
           shortDescription: values.shortDescription,

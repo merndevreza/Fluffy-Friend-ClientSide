@@ -47,6 +47,7 @@ const CreateDonationCampaign = () => {
         const addDonationDoc = {
           petName: values.petName,
           maxDonationAmount: values.maxDonation,
+          totalDonationAmount:0,
           donationLastDate: values.donationLastDate,
           image: imageUrl,
           shortDescription: values.shortDescription,
