@@ -64,8 +64,7 @@ const UpdatePet = () => {
         };
         axiosSecure
           .patch(`/update-pet/${_id}`, updatePetDoc)
-          .then((res) => {
-            console.log(res.data);
+          .then((res) => { 
             if (res.data.modifiedCount>0) {
               Swal.fire({
                 title: "Congrats!!",
@@ -109,7 +108,7 @@ const UpdatePet = () => {
     <div className="absolute left-0 top-0 w-full h-full bg-theme-black dark:opacity-90 opacity-0 z-0"></div>
     <div className="dark:bg-theme-black relative z-10 bg-white  max-w-3xl mx-auto px-6 md:px-12 py-10 md:py-16">
       <h2 className="text-4xl dark:text-white  text-theme-black mb-9 font-semibold">
-        Add A Pet
+        Update A Pet
       </h2>
       <form
         onSubmit={handleSubmit}

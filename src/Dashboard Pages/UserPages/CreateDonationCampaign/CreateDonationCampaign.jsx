@@ -6,14 +6,6 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { ValidationForDonation } from "../../../Pages/ValidationForDonation";
 
-const initialValues = {
-  petName: "",
-  maxDonation: "",
-  donationLastDate: "",
-  shortDescription: "",
-  fullDescription: "",
-  petImage: null,
-};
 const imageHostingAPI = `https://api.imgbb.com/1/upload?key=${
   import.meta.env.VITE_IMGBBKEY
 }`;
@@ -24,6 +16,14 @@ const CreateDonationCampaign = () => {
   const { user } = useContext(AuthContext);
   const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
+  const initialValues = {
+    petName: "",
+    maxDonation: "",
+    donationLastDate: "",
+    shortDescription: "",
+    fullDescription: "",
+    petImage: null,
+  };
   const {
     values,
     errors,
