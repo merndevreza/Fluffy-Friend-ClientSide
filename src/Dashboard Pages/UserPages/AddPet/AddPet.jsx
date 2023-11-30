@@ -3,8 +3,10 @@ import { useFormik } from "formik";
 import { useState } from "react";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-
 import { validationSchema } from "../../../ValidationSchema";
+import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const initialValues = {
   petName: "",
@@ -18,8 +20,11 @@ const initialValues = {
 const imageHostingAPI = `https://api.imgbb.com/1/upload?key=${
   import.meta.env.VITE_IMGBBKEY
 }`;
-
+//======================
+//component start here
+//======================
 const AddPet = () => {
+  const { user } = useContext(AuthContext);
   const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
   const [selectedOption, setSelectedOption] = useState(null);
@@ -49,21 +54,35 @@ const AddPet = () => {
           location: values.petLocation,
           image: imageUrl,
           category: selectedOption.value,
-          shortDescription:values.shortDescription,
-          details:values.fullDescription,
+          shortDescription: values.shortDescription,
+          details: values.fullDescription,
           uploadTime: formData.get("timestamp"),
-          adopted:false
+          adopted: false,
+          addedBy: user.email,
         };
         axiosSecure
           .post("/add-pet", addPetDoc)
           .then((res) => {
-            console.log(res.data);
+            if (res.data.insertedId) {
+              Swal.fire({
+                title: "Congrats!!",
+                text: `You successfully added the pet`,
+                icon: "success",
+                confirmButtonText: "OK",
+              });
+            }
           })
-          .catch((error) => console.log(error));
-        // Now you can use imageUrl as needed
-        console.log("Image URL:", imageUrl);
+          .catch((error) => {
+            const errorMessage = error.message;
+            Swal.fire({
+              title: "Error!",
+              text: `${errorMessage}`,
+              icon: "error",
+              confirmButtonText: "OK",
+            });
+          }); 
       } catch (error) {
-        console.error("Image upload failed:", error);
+        console.error("Error in the add-pet:", error);
       }
       // Reset the form
       action.resetForm();

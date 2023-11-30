@@ -19,8 +19,8 @@ import MyDonationCampaigns from "../Dashboard Pages/UserPages/MyDonationCampaign
 import MyDonations from "../Dashboard Pages/UserPages/MyDonations/MyDonations";
 import AllDonations from "../Dashboard Pages/AdminPages/AllDonations/AllDonations";
 import AllPets from "../Dashboard Pages/AdminPages/AllPets/AllPets";
-import Users from "../Dashboard Pages/AdminPages/Users/Users";
-import { ValidationSchemaExample } from "../Dashboard Pages/UserPages/AddPet/ValidationSchemaExample";
+import Users from "../Dashboard Pages/AdminPages/Users/Users"; 
+import UpdatePet from "../Dashboard Pages/UserPages/UpdatePet/UpdatePet";
 
 const router = createBrowserRouter([
   {
@@ -67,11 +67,7 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
-      },
-      {
-        path: "/formik",
-        element: <ValidationSchemaExample></ValidationSchemaExample>
-      },
+      }, 
     ],
   },
   {
@@ -87,6 +83,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <AddPet></AddPet>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/dashboard/update-pet/:id",
+        element: (
+          <PrivateRoutes>
+            <UpdatePet></UpdatePet>
           </PrivateRoutes>
         ),
       },
