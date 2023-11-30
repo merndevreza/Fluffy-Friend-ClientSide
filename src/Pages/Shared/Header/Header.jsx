@@ -87,7 +87,7 @@ const Header = () => {
     <div
       className={
         scroll
-          ? "fixed z-30 top-0 w-full dark:bg-theme-black bg-[#fbebcd] shadow-lg"
+          ? "fixed z-[99] top-0 w-full dark:bg-theme-black bg-[#fbebcd] shadow-lg"
           : "dark:bg-theme-black bg-[#fbebcd]"
       }
     >
@@ -114,7 +114,7 @@ const Header = () => {
         <nav className="order-1 xl:order-2">
           <button
             onClick={handleMobileMenu}
-            className="text-2xl border-2 p-1 text-white xl:hidden"
+            className="text-2xl border-2 p-1 dark:text-white text-theme-black xl:hidden"
           >
             <RiMenuLine></RiMenuLine>
           </button>

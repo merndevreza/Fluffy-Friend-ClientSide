@@ -14,3 +14,15 @@ h1,h2,h3,h4,h5,h6{
 .shape-bg{
    background-image: url(./assets/images/shape-bg.jpg);
 }
+a.active{
+   color: #feab0c;
+}
+.css-13cymwt-control {
+   border: none!important;
+   padding: 2px 8px;
+   border-radius: 20px!important;
+   background-color: #feab0c4c!important;
+}
+p.form-error {
+   color: red;
+}
