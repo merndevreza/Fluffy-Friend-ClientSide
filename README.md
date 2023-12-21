@@ -3,13 +3,14 @@
 This is a Pet Adoption react app.
 ## Project Features
 - Firebase authentication for login and registration
-- In Petlisting page- all unAdopted pets are displayed. Filter by category and search is also added.
-- In the pet details page - pet details is shown and user can request for adoption by submitting a form.
-- In Donation Campaign page - all campaings are shown and in the details route - a user can donate ammount
-- In the Dashboard route 2 different navigations are created for admin and user.
-- In the app pet route- user can add a pet with image uploding feature.
-- user also can update his added pets.
-- user can also add campains and can modify them.
-- And many more...
+
+- Admin can see all registered users and can make a user admin or Ban or Delete.
+- Admin can see all added pets and can update or delete or change adoption status.
+- Admin can see all donation campaigns and can delete, edit, and pause any donation campaign.
+
+- User can see only the pets he/she added and can update or delete or change adoption status.
+- User can see all adoption requests he/she got for his added pets.
+- User can see only the donation campaigns he/she added and can see the users who have donated and their donated amount, and also can update or pause.
+- User can see all his/her donations and can ask for a refund
 
 # Live Link: https://fluffy-friends-4a865.web.app/
