@@ -8,7 +8,7 @@ const PetListing = () => {
   const [pets, setPets] = useState([]);
   const axiosPublic = useAxiosPublic();
   useEffect(() => {
-    axiosPublic.get("/pets").then((res) => {
+    axiosPublic.get("/pets?_limits=9&_page=2").then((res) => {
       setPets(res.data);
       setDisplayPets(res.data);
     });

@@ -22,6 +22,8 @@ import AllPets from "../Dashboard Pages/AdminPages/AllPets/AllPets";
 import Users from "../Dashboard Pages/AdminPages/Users/Users"; 
 import UpdatePet from "../Dashboard Pages/UserPages/UpdatePet/UpdatePet";
 import EditDonationCampaign from "../Dashboard Pages/UserPages/EditDonationCampaign/EditDonationCampaign";
+import AnimalRescue from "../Pages/AnimalRescue/AnimalRescue";
+import PetCareCampaignsWeeks from "../Pages/PetCareCampaignsWeeks/PetCareCampaignsWeeks";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
       {
         path: "/pet-listing",
         element: <PetListing></PetListing>,
+      },
+      {
+        path: "/pet-care-campaigns",
+        element: <PetCareCampaignsWeeks></PetCareCampaignsWeeks>
+      },
+      {
+        path: "/animal-rescue",
+        element: <AnimalRescue></AnimalRescue>
       },
       {
         path: "/pet/details/:id",

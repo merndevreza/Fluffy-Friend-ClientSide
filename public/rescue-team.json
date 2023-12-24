@@ -1,0 +1,67 @@
+[
+   {"_id":1,
+      "name":"Animal Rescuers Bangladesh (ARB)",
+      "photo":"https://i.guim.co.uk/img/media/26c615f1f7f463cce2fcfae58c03366d64db3e78/0_117_2048_1229/master/2048.jpg?width=1200&quality=85&auto=format&fit=max&s=1699650ae7362ecc0d3587ab46131dc2",
+      "address":"Dhaka",
+      "map":"https://maps.app.goo.gl/nzTqhxNQFUUTxigf6",
+      "phone":"01780572272",
+      "description":"Animal Rescuers Bangladesh work independently or for shelters or wildlife refuges.",  
+      "website":"https://fluffy-friends-4a865.web.app",
+      "facebook":"https://www.facebook.com/groups/295340471219980/"
+   }, 
+   {
+      "_id":2,
+      "name":"Animal RAF society of Bangladesh",
+      "photo":"https://www.petaindia.com/wp-content/uploads/2012/08/PETA-dog-animal-distress.jpg",
+      "address":"Barishal",
+      "map":"https://maps.app.goo.gl/nzTqhxNQFUUTxigf6",
+      "phone":"01780572272",
+      "description":"Animal RAF society of Bangladesh work independently or for shelters or wildlife refuges.",  
+      "website":"https://fluffy-friends-4a865.web.app",
+      "facebook":"https://www.facebook.com/groups/380962476118696/"
+   }, 
+   {
+      "_id":3,
+      "name":"Dhaka Animal Rescuers",
+      "photo":"https://www.laanimalservices.com/sites/default/files/styles/card_tablet_1664x1028/public/2022-05/Smart_0.png.webp?itok=pw9w9tUw",
+      "address":"Dhaka",
+      "map":"https://maps.app.goo.gl/nzTqhxNQFUUTxigf6",
+      "phone":"01780572272",
+      "description":"Dhaka Animal Rescuers work independently or for shelters or wildlife refuges.",  
+      "website":"https://fluffy-friends-4a865.web.app",
+      "facebook":"https://www.facebook.com/groups/316122642305108/"
+   }, 
+   {
+      "_id":4,
+      "name":"Khulna Animal Rescuers",
+      "photo":"https://www.aspca.org/sites/default/files/behind-the-scenes-of-an-animal-rescue-main.jpg",
+      "address":"Khulna",
+      "map":"https://maps.app.goo.gl/nzTqhxNQFUUTxigf6",
+      "phone":"01780572272",
+      "description":"Khulna Animal Rescuers work independently or for shelters or wildlife refuges.",  
+      "website":"https://fluffy-friends-4a865.web.app",
+      "facebook":"https://web.facebook.com/groups/295340471219980"
+   },
+   {
+      "_id":5,
+      "name":"Rangpur Animal Rescuers ",
+      "photo":"https://blog.customink.com/wp-content/uploads/2019/10/Animal-rescue-slogans.jpg",
+      "address":"Rangpur",
+      "map":"https://maps.app.goo.gl/nzTqhxNQFUUTxigf6",
+      "phone":"01780572272",
+      "description":"Rangpur Animal Rescuers work independently or for shelters or wildlife refuges.",  
+      "website":"https://fluffy-friends-4a865.web.app",
+      "facebook":"https://web.facebook.com/groups/295340471219980"
+   },
+   {
+      "_id":6,
+      "name":"Chittagong Animal Rescuers",
+      "photo":"https://www.aljazeera.com/wp-content/uploads/2023/02/2023-02-08T211357Z_1593535242_RC267Z9ER1RY_RTRMADP_3_TURKEY-QUAKE-EL-SALVADOR.jpg?resize=1800%2C1365",
+      "address":"Chittagong",
+      "map":"https://maps.app.goo.gl/nzTqhxNQFUUTxigf6",
+      "phone":"01780572272",
+      "description":"Chittagong Animal Rescuers work independently or for shelters or wildlife refuges.",  
+      "website":"https://fluffy-friends-4a865.web.app",
+      "facebook":"https://web.facebook.com/groups/295340471219980"
+   }
+]

@@ -69,7 +69,7 @@ const PetDetails = () => {
           </div>
           <div className="bg-white dark:bg-theme-dark-top p-12">
             <h2 className="text-3xl text-theme-yellow font-semibold mb-5">
-              Age: {age} years
+              Age: {age} Months
             </h2>
             <h2 className="text-2xl  font-semibold dark:text-white text-theme-dark mb-5">
               Address: {location}
@@ -127,8 +127,7 @@ const PetDetails = () => {
                 <p className="text-theme-yellow font-semibold">Husky</p>
               </div>
             </div>
-            <div className="mt-20">
-              {/* modal */}
+            <div className="mt-20"> 
               <button
                 className="btn rounded-full  border-none bg-theme-yellow hover:bg-theme-black hover:text-white cursor-pointer text-theme-dark text-xl px-8"
                 onClick={() =>
@@ -194,7 +193,7 @@ const PetDetails = () => {
                     </form>
                   </div>
                 </div>
-              </dialog>
+              </dialog> 
             </div>
           </div>
         </div>

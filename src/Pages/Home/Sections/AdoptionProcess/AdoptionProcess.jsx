@@ -1,41 +1,24 @@
+import { Link } from "react-router-dom";
+import Button from "../../../../Components/Button";
 import SectionTitle from "../../../../Components/SectionTitle";
+import rescueBanner from "../../../../assets/images/animal-resque.jpeg"
 
 const AdoptionProcess = () => {
   return (
     <div className="dark:bg-theme-dark-top bg-[#f5eed9] py-14 md:py-24 lg:py-28">
       <div className="container mx-auto">
         <SectionTitle
-          title={"How it works?"}
-          subTitle={"Follow the Easy Steps"}
-          info={"Follow the Fluffy Friends Adoption  steps outlined below to bring joy into your home and make a lasting impact on the life of a lovable pet."}
+          title={"Animal Rescue Teams"}
+          subTitle={"Contact with volunteer teams"}
+          info={"If you have found any pet need help then contact with a rescue team near you or inform us. We will send rescue team"}
         ></SectionTitle>
-        
-        <ul className="steps steps-vertical lg:steps-horizontal">
-              <li className="step">
-               <div className="dark:bg-theme-dark bg-[#feab0c6c] px-5 py-10 m-3">
-               <h3 className="text-3xl font-semibold dark:text-white text-theme-black mb-5">Explore Our Adorable Companions</h3>
-               <p className="dark:text-theme-light text-theme-dark text-lg">Browse through our diverse categories of pets, each with its unique charm and personality. Find the perfect companion for you.</p>
-               </div>
-              </li>  
-              <li className="step">
-               <div className="dark:bg-theme-dark bg-[#feab0c6c]  px-5 py-10 m-3">
-               <h3 className="text-3xl font-semibold dark:text-white text-theme-black  mb-5">Submit Your Adoption Application</h3>
-               <p className="dark:text-theme-light text-theme-dark text-lg">Once you &apos; ve found your potential furry friend, fill out a simple and straightforward adoption application. This will ensure your chance.  </p>
-               </div>
-              </li>  
-              <li className="step">
-               <div className="dark:bg-theme-dark bg-[#feab0c6c] px-5 py-10 m-3">
-               <h3 className="text-3xl font-semibold dark:text-white text-theme-black  mb-5">Meet and Greet</h3>
-               <p className="dark:text-theme-light text-theme-dark text-lg">Schedule a meet-and-greet session with your chosen pet. This is an opportunity for you to interact with your potential companion, and ensure that it is a perfect fit for your home.</p>
-               </div>
-              </li>  
-              <li className="step">
-               <div className="dark:bg-theme-dark bg-[#feab0c6c]  px-5 py-10 m-3">
-               <h3 className="text-3xl font-semibold dark:text-white text-theme-black  mb-5">Welcome Your New Family Member</h3>
-               <p className="dark:text-theme-light text-theme-dark text-lg">After a successful meet-and-greet, complete the adoption process, and welcome your new family member with open arms.  </p>
-               </div>
-              </li>  
-            </ul>
+         <div className="text-center">
+         <img className="max-h-[500px] rounded-md mx-auto" src={rescueBanner} alt="" />
+         
+         <div className="mt-8">
+         <Link to="/animal-rescue"><Button btnName={"Animal Rescue Teams"} ></Button></Link>
+         </div>
+         </div>
       </div>
     </div>
   );
